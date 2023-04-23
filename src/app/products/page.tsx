@@ -1,8 +1,10 @@
-import { getProducts } from '@/service/products';
+import MeowArticle from '@/components/MeowArticle';
+import { getCat, getProducts } from '@/service/products';
 import Link from 'next/link';
 
 export default async function ProductsMain() {
   const products = await getProducts();
+  const cat = await getCat();
   return (
     <section>
       <h1>Products</h1>
@@ -13,6 +15,8 @@ export default async function ProductsMain() {
           </li>
         ))}
       </ul>
+      {/*  <h1>{cat}</h1> */}
+      <MeowArticle />
     </section>
   );
 }

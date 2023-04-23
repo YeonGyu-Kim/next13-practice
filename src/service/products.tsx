@@ -28,3 +28,12 @@ export async function getProduct(id: string) {
     .then((res) => res.json())
     .then((data) => data?.data[0]);*/
 }
+
+export async function getCat() {
+  return await fetch('https://meowfacts.herokuapp.com', {
+    //next: { revalidate: 0 },
+    //cache: 'reload',
+  })
+    .then((res) => res.json())
+    .then((data) => data?.data[0]);
+}
